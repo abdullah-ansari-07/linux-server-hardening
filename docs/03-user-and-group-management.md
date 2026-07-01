@@ -1,18 +1,21 @@
-User and group management
-# Prerequisites
+# User and group management
+## Prerequisites
 - Successful SSH access
 - Ubuntu server running
 - Basic Linux command line
 
-# Introduction
+
+## Introduction
 Linux is a multi-user operating system where multiple people can create user accounts for their personal purposes. Every user will have their own permissions, access controls and privileges which are determined by the organization or the root user.
 The root user has unrestricted access to the system and any changes made by the root user are allowed and is also one reason why it is recommended to use a user profile for daily tasks as even one small mistake can change the system and cause potential issues which might affect the system as a whole.
 
-# Objective
+
+## Objective
 To create a dedicated user for administrative purposes and organize permissions using groups
 Grant sudo privileges to the user and reduce the dependence upon the default Ubuntu user.
 
-# Background
+
+## Background
 - Linux Users  
 Every person or service runs as a user and has their own unique ID. Each user has their own home directory and user ID while the process has a PID. 
 - Groups  
@@ -43,7 +46,8 @@ rw-rw---- and corresponds to 660
 - UID  
 Unique numeric identifier for identifying each user in the system and specific to that user. Root always has an ID = 0. Regular users have a non-zero UID.
 
-# Implementation
+
+## Implementation
 ```text
 Create user
 ↓
@@ -60,7 +64,8 @@ Add user to sudo group
 Verify login
 ```
 
-# Commands Used
+
+## Commands Used
 ```bash
  sudo adduser devops
 
@@ -78,7 +83,8 @@ Verify login
  sudo chmod 600 /home/devops/.ssh/authorized_keys
 ```
 
-# Verification
+
+## Verification
 ```text
 Login as new user
 ↓
@@ -89,7 +95,8 @@ groups
 sudo command successful
 ```
 
-# Lessons Learned
+
+## Lessons Learned
 - Linux users  and groups
 - Principle of Least Privilege
 - sudo administration

@@ -1,19 +1,22 @@
-SSH Authentication
-# Prerequisites
+# SSH Authentication
+## Prerequisites
 - Completed EC2 setup
 - Running Ubuntu EC2 instance
 - Downloaded .pem private key
 
-# Introduction
+
+## Introduction
 SSH (Secure Shell) is a cryptographic network protocol for secure communication, remote shell services, command executions and other secure network services between two computers.
 It was designed to replace Telnet and make it secure.
 Devices can be connected and administered over the network by securing an encrypted connection over the network for purposes specific to the user.
 
-# Objective
+
+## Objective
 To use the .pem containing the private key to SSH into our AWS EC2 instance through our device's command line terminal.
 No passwords are to be used and identity to be verified only through SSH Key Authentication
 
-# Background
+
+## Background
 - SSH  
 SSH stands for Secure Shell. It is a protocol for remote administration and encrypted communication between 2 devices over a network.
 SSH replaces insecure protocols like Telnet which sent packets of confidential data and secrets over the network in plain text and was very much prone to attackers gaining access to it and reading confidential data mostly through Man-in-the-middle attacks.
@@ -30,7 +33,8 @@ This file contains the public key stored in the AWS EC2 instance. It is located 
     - Listened to by sshd
     - Used for secure remote administration
 
-# Implementation
+
+## Implementation
 The following sequence was used to establish the initial SSH connection.
 ```text
 Locate .pem
@@ -48,7 +52,8 @@ Login successful
 
 chmod 400 gives read permission for the owner only and gives no access to others in the group or other external groups. This is done to ensure security and data privacy.
 
-# Commands Used
+
+## Commands Used
 ```bash
  chmod 400 key.pem
  
@@ -57,7 +62,8 @@ chmod 400 gives read permission for the owner only and gives no access to others
  exit
 ```
 
-# Verification
+
+## Verification
 ```text
 Successful login
 ↓
@@ -69,7 +75,9 @@ whoami
 ↓
 hostname
 ```
-# SSH Key Authentication Visualised
+
+
+## SSH Key Authentication Visualised
 ```text
 Local Machine
 (private key)
@@ -86,7 +94,8 @@ EC2 Instance
 Authentication Successful
 ```
 
-# Lessons Learned
+
+## Lessons Learned
 - SSH into a remote server from local machine
 - Challenge response authentication concept
 - Public and Private SSH Keys

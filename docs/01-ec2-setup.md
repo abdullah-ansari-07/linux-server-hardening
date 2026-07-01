@@ -1,22 +1,25 @@
-AWS EC2 Setup with Ubuntu
-# Prerequisites
+# AWS EC2 Setup with Ubuntu
+## Prerequisites
 - AWS Account
 - EC2 Service
 - Basic understanding of Linux
 
-# Introduction
+
+## Introduction
 This section is a walkthrough of the AWS Cloud Service setup where I setup the EC2 environment and get the instance up and running with Ubuntu.
 
-# Objective
+
+## Objective
 To setup the environment for the project.
 I chose EC2 as I only needed the computing power from a cloud system.
 I also chose Ubuntu as it has a easy-to-use CLI and makes it easier to manage and configure.
- 
+
+
 - Why Cloud?  
 AWS Cloud was preferred over a Virtual Machine as VMs take a lot of space and computing power and also needs to be stored in the device whereas Cloud manages the computing power and stores our information in it's service which can be accessed at any given time.
 
 
-# Background
+## Background
 - EC2  
 EC2 (Elastic Compute Cloud) is AWS's virtual server service which provides scalable computing resources in cloud. AWS Cloud Services remove the need for local hardware or virtual machines completely.
 I used the EC2 service in the N. Virginia (us-east-1) region. I chose this as it is one of AWS's most widely supported region.
@@ -33,7 +36,7 @@ A Security Group is the virtual firewall attached to an EC2 instance and is prov
 This is the first network security layer before traffic reaches the OS in the EC2 instance. It also has specific rules and protocols which it follows to determine which ports are accessible.
 
 
-# Implementation
+## Implementation
 I launched an instance from the management console of the EC2 service.
 
 I selected the Ubuntu AMI for the Operating System, t3.micro for the instance type, generated a new SSH key pair, configured the initial security group, launched the instance and waited for the AWS health checks to complete.
@@ -54,7 +57,9 @@ Configure Security Group
         ↓
 Launch Instance
 ```
-# AWS Resources Created
+
+
+## AWS Resources Created
 - EC2 Instance
 - Ubuntu AMI (selected)
 - t3.micro Instance type
@@ -63,7 +68,8 @@ Launch Instance
 - Root EBS Volume
 - Public IPv4 address (auto-assigned)
 
-# Verification
+
+## Verification
 AWS provides a verification within the EC2 management console where it runs it's own checks and approves wether it's good to go.
 ```text
 Instance reached running state
@@ -72,7 +78,9 @@ EC2 status checks passed
         ↓
 Public IPv4 address assigned
 ```
-# Lessons Learned
+
+
+## Lessons Learned
 - Why cloud is preferred over local Virtual Machines
 - Role of AMI in a virtual server (template to create EC2 instance)
 - How and why SSH keys are used for secure remote access
